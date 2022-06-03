@@ -12,5 +12,11 @@ pipeline{
             sh 'ps -ef'
         }
     }
+    stage('akudo-processes'){
+        steps{
+            sh 'ps -ef'
+            sh 'sudo systemctl status jenkins'
+        }
+    }
  }
 }
