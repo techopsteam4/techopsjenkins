@@ -26,7 +26,7 @@ pipeline{
         }
         stage('rachel-system analysis'){
           steps{
-            sh 'ps -ef
+            sh 'ps -ef'
             sh 'sudo systemctl status jenkins'
  }
 }
