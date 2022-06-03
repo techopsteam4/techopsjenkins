@@ -6,11 +6,11 @@ pipeline{
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-id', url: 'https://github.com/techopsteam4/techopsjenkins.git']]])
             }
         }
-    }
-    stage('systemstatus'){
+        stage('status'){
         steps{
             sh 'systemctl status jenkins'
             sh 'ps -ef'
         }
     }
+ }
 }
