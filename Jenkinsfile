@@ -1,15 +1,16 @@
 pipeline{
     agent any
     stages{
-        stage('procesInfor'){
+        stage('clone-Andine'){
             steps{
-                sh 'ps -ef'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-id', url: 'https://github.com/techopsteam4/techopsjenkins.git']]])
             }
         }
     }
     stage('systemstatus'){
         steps{
             sh 'systemctl status jenkins'
+            sh 'ps -ef'
         }
     }
 }
