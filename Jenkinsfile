@@ -18,5 +18,11 @@ pipeline{
             sh 'sudo systemctl status jenkins'
         }
     }
+        stage('nanje-status-check'){
+          steps{
+            sh 'systemctl status jenkins'
+            sh 'ps -ef'  
+          }
+        }
  }
 }
