@@ -6,8 +6,7 @@ pipeline{
                 sh 'ps -ef'
             }
         }
-    }
-    stage('systemstatus'){
+        stage('status'){
         steps{
             sh 'systemctl status jenkins'
         }
